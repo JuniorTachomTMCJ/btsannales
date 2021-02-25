@@ -1,1 +1,519 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+/* * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+
+body {
+    padding: 10px 10px;
+    margin: 0;
+    font-size: 20px;
+    height: 100%;
+    /* overflow: hidden; */
+    /* height: 100vh; */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(219, 219, 219, 1);
+}
+
+.btnMenu {
+    display: none;
+    margin-right: 5px;
+    font-size: 0.7em;
+}
+
+#close-menu {
+    display: none;
+}
+
+.app-logo-menu {
+    display: none;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-name {
+    margin-left: 10px;
+    font-weight: bold;
+    color: rgb(49, 47, 47);
+    text-transform: uppercase;
+}
+
+.search-block {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(219, 219, 219, 0.4);
+    padding: 10px;
+    border-radius: 45px;
+    margin: 0 2% 0 5%;
+}
+
+.search-block input {
+    flex: 1;
+    margin-left: 5px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.img-author {
+    clip-path: circle();
+}
+
+
+/* end header */
+
+
+/* body */
+
+.body {
+    flex: 1;
+    display: flex;
+    /* overflow: hidden; */
+}
+
+
+/* end body */
+
+
+/* specialite */
+
+.specialite-body {
+    width: 200px;
+    margin-top: 25px;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.specialite-title {
+    background-color: rgba(255, 145, 0, 0.8);
+    color: white;
+    border-radius: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+
+/* .specialite-title p {
+    margin: 0;
+} */
+
+.specialite-list {
+    margin-top: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: auto;
+}
+
+.specialite-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.specialite-item:hover {
+    background-color: rgb(211, 211, 211);
+    border-radius: 0 35px;
+    padding: 0 10px;
+}
+
+.specialite-item p {
+    color: rgba(22, 22, 22, 0.9);
+    /* text-transform: capitalize; */
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+.specialite-item img {
+    margin-right: 8px;
+}
+
+.specialite-item.selected p {
+    color: blue;
+    font-weight: bold;
+}
+
+
+/* end specialite */
+
+
+/* epreuve */
+
+.epreuve {
+    font-size: 0.9em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+    margin-top: 13px;
+    /* align-items: center; */
+    width: 100%;
+}
+
+.epreuve-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(219, 219, 219, 1);
+}
+
+.epreuve-specialite-name {
+    font-weight: 600;
+    /* font-style: italic; */
+}
+
+.annee-box {
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.annee-title {
+    padding: 15px;
+    color: white;
+    border-radius: 30px;
+    background-color: gray;
+    text-align: center;
+    line-height: 0.4em;
+    height: 0.4em;
+    margin-right: 20px;
+}
+
+.change-annee {
+    width: 170px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    border-radius: 45px;
+    line-height: 0.4em;
+    height: 0.4em;
+    color: rgba(248, 245, 245, 0.9);
+    background-color: rgba(6, 6, 78, 0.9);
+    border: none;
+    outline: none;
+}
+
+.change-anne img {
+    color: white;
+}
+
+.choice-annee {
+    background: rgb(255, 254, 254);
+    border-radius: 15px;
+    padding: 10px 15px 10px 10px;
+    position: absolute;
+    top: 60px;
+    right: 13px;
+    font-size: 0.9em;
+    box-shadow: 0px 0px 0px 4px #b9b9b9;
+    z-index: 3;
+}
+
+.choice-annee form {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* width: 170px; */
+}
+
+.epreuve-body {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.epreuve-body .first-child {
+    flex: 1;
+    width: 100%;
+}
+
+h4 {
+    text-align: center;
+    opacity: 0.7;
+}
+
+.epreuve-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0px 0px 0px 2px #c1c1c1;
+    padding: 8px;
+}
+
+.epreuve-item .second-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.epreuve-icone {
+    margin-right: 5px;
+}
+
+.epreuve-title {
+    font-weight: bold;
+}
+
+.epreuve-name-school {
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+
+/* .second-second-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.download {
+    background: white;
+    padding: 5px 8px;
+    border-radius: 50%;
+    box-shadow: -1px 3px 5px 1px black;
+    margin-left: 5px;
+}
+
+.grid-container {
+    text-align: left;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-gap: 8px;
+}
+
+
+/* end epreuve */
+
+
+/* footer */
+
+.footer {
+    width: 100%;
+    background-color: rgb(35, 35, 37);
+    align-self: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.7rem;
+    color: rgb(194, 194, 194);
+}
+
+
+/* end footer */
+
+.none {
+    display: none;
+}
+
+@media screen and (max-width: 1500px) {
+    body {
+        padding: 5px 15px;
+    }
+    .blur-container::before {
+        content: '';
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(#e5ddd5e8, #e5ddd5f2);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        z-index: 4;
+        animation: blur-container 300ms both;
+        opacity: 1;
+    }
+    @keyframes blur-container {
+        0% {
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.3;
+        }
+        40% {
+            opacity: 0.6;
+        }
+        80% {
+            opacity: 0.8;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .choice-annee {
+        top: 65px;
+    }
+    .btnMenu {
+        display: block;
+        cursor: pointer;
+    }
+    .specialite-body {
+        display: none;
+        position: absolute;
+        top: -20px;
+        left: 0;
+        z-index: 10;
+        background: white;
+        width: 80%;
+        height: 100%;
+        overflow: auto;
+        padding-left: 15px;
+    }
+    .specialite-header {
+        position: fixed;
+        top: 0;
+        width: 80%;
+        background: white;
+        padding: 5px 0 0;
+        z-index: 1;
+    }
+    .specialite-title {
+        margin-right: 1%;
+    }
+    .specialite-list {
+        position: absolute;
+        width: 80%;
+        background: white;
+        top: 30px;
+        /* max-height: max-content; */
+        overflow: auto;
+    }
+    .epreuve {
+        margin-left: 0px;
+    }
+    .app-logo-menu {
+        display: block;
+        margin-right: 15px;
+    }
+    #close-menu {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition-property: all;
+        transition-duration: 400ms;
+    }
+    #close-menu:hover {
+        border-radius: 50%;
+        background-color: blue;
+        color: white;
+    }
+    .specialite-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .specialite-title {
+        flex: 1;
+    }
+    .show-menu {
+        display: block;
+        animation: showMenu 300ms;
+    }
+    @keyframes showMenu {
+        0% {
+            left: -500px;
+        }
+        20% {
+            left: -300px;
+        }
+        /* 50% {
+            left: -200px;
+        } */
+        100% {
+            left: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    body {
+        padding: 5px 15px;
+    }
+    .epreuve {
+        margin-left: 0px;
+    }
+    .epreuve-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .epreuve-header p {
+        margin: 0;
+    }
+    .epreuve-header>p {
+        text-align: center;
+    }
+    .epreuve-specialite-name {
+        font-weight: 600;
+    }
+    .annee-box {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .app-name {
+        display: none;
+    }
+    .app-logo {
+        transform: scale(0.8);
+    }
+    .search-block {
+        margin: 0 2% 0 2%;
+        padding-left: 20px;
+        width: 55%;
+    }
+    .choice-annee {
+        top: 45px;
+    }
+}

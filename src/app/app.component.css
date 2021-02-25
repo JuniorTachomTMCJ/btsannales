@@ -1,0 +1,12 @@
+/* mat-tab-group {
+    border: 2px solid red !important;
+    width: 100% !important;
+    display: flex !important;
+} */
+
+mat-grid-tile {
+    /* padding: 0; */
+    /* background: lightblue; */
+}
+
+mat-grid-list {}
