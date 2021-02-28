@@ -40,7 +40,7 @@ function showMenu(){
 })
 
 export class AppComponent implements OnInit{
-  title = 'structure2';
+  title = 'BTS Annales';
   showChoiceAnne = false;
 
   //Info des données
@@ -157,5 +157,15 @@ export class AppComponent implements OnInit{
   //   // if(result) this.display = "block";
   //   // else this.display="none";
     return result;
+  }
+  noEpreuve(semestre, type):Boolean{
+    // Vérification de la correspondance des Spécialités
+    for (let i = 0; i < this.epreuves.length; i++) {
+      const epreuve =this. epreuves[i];
+      if(this.showEpreuve(epreuve, semestre, type) == true){
+        return true;
+      }
+    }
+    return false;
   }
 }

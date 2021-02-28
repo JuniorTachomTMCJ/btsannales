@@ -4,9 +4,9 @@
             <img src="../assets/images/menu.svg" alt="" width="20px">
         </div>
         <div class="app">
-            <!-- <div class="app-logo">
+            <div class="app-logo">
                 <img src="../assets/images/logo.svg" alt="" width="40px">
-            </div> -->
+            </div>
             <div class="app-name">BTS Annales</div>
         </div>
         <div class="search-block">
@@ -26,9 +26,9 @@
     <div class="body">
         <div class="specialite-body" id="menu-content">
             <div class="specialite-header">
-                <!-- <div class="app-logo-menu">
+                <div class="app-logo-menu">
                     <img src="../assets/images/logo.svg" alt="" width="40px">
-                </div> -->
+                </div>
                 <div class="specialite-title">
                     Spécialités
                 </div>
@@ -66,7 +66,7 @@
                     <mat-tab label="CC">
                         <div class="first-child">
                             <h4>Semestre 1</h4>
-                            <div class="grid-container">
+                            <div class="grid-container" [class.none]="!noEpreuve(1, 'cc')">
                                 <div *ngFor="let epreuve of epreuves;" [class.none]="!showEpreuve(epreuve, 1, 'cc')" ngModel>
                                     <div class="epreuve-item" title="{{epreuve.name}}" *ngIf="showEpreuve(epreuve, 1, 'cc')" ngModel>
                                         <img class="epreuve-icone" src="../assets/images/pdf.svg" alt="" width="50px">
@@ -82,8 +82,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="noEpreuve" [class.none]="noEpreuve(1, 'cc')">
+                                Aucune épreuve disponible
+                            </div>
                             <h4>Semestre 2</h4>
-                            <div class="grid-container">
+                            <div class="grid-container" [class.none]="!noEpreuve(2, 'cc')">
                                 <div *ngFor="let epreuve of epreuves;" [class.none]="!showEpreuve(epreuve, 2, 'cc')" ngModel>
                                     <div class="epreuve-item" title="{{epreuve.name}}" *ngIf="showEpreuve(epreuve, 2, 'cc')" ngModel>
                                         <img class="epreuve-icone" src="../assets/images/pdf.svg" alt="" width="50px">
@@ -99,12 +102,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="noEpreuve" [class.none]="noEpreuve(2, 'cc')">
+                                Aucune épreuve disponible
+                            </div>
                         </div>
                     </mat-tab>
                     <mat-tab label="Normale">
                         <div class="first-child">
                             <h4>Semestre 1</h4>
-                            <div class="grid-container">
+                            <div class="grid-container" [class.none]="!noEpreuve(1, 'SN')">
                                 <div *ngFor="let epreuve of epreuves;" [class.none]="!showEpreuve(epreuve, 1, 'SN')" ngModel>
                                     <div class="epreuve-item" title="{{epreuve.name}}" *ngIf="showEpreuve(epreuve, 1, 'SN')" ngModel>
                                         <img class="epreuve-icone" src="../assets/images/pdf.svg" alt="" width="50px">
@@ -120,8 +126,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="noEpreuve" [class.none]="noEpreuve(1, 'SN')">
+                                Aucune épreuve disponible
+                            </div>
                             <h4>Semestre 2</h4>
-                            <div class="grid-container">
+                            <div class="grid-container" [class.none]="!noEpreuve(2, 'SN')">
                                 <div *ngFor="let epreuve of epreuves;" [class.none]="!showEpreuve(epreuve, 2, 'SN')" ngModel>
                                     <div class="epreuve-item" title="{{epreuve.name}}" *ngIf="showEpreuve(epreuve, 2, 'SN')" ngModel>
                                         <img class="epreuve-icone" src="../assets/images/pdf.svg" alt="" width="50px">
@@ -137,14 +146,17 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="noEpreuve" [class.none]="noEpreuve(2, 'SN')">
+                                Aucune épreuve disponible
+                            </div>
                         </div>
                     </mat-tab>
                     <mat-tab label="Rattrapage">
                         <div class="first-child">
                             <h4>Semestre 1</h4>
-                            <div class="grid-container">
-                                <div *ngFor="let epreuve of epreuves;" [class.none]="!showEpreuve(epreuve, 1, 'R')" ngModel>
-                                    <div class="epreuve-item" title="{{epreuve.name}}" *ngIf="showEpreuve(epreuve, 1, 'SN')" ngModel>
+                            <div class="grid-container" [class.none]="!noEpreuve(1, 'Rattrapage')">
+                                <div *ngFor="let epreuve of epreuves;" [class.none]="!showEpreuve(epreuve, 1, 'Rattrapage')" ngModel>
+                                    <div class="epreuve-item" title="{{epreuve.name}}" *ngIf="showEpreuve(epreuve, 1, 'R')" ngModel>
                                         <img class="epreuve-icone" src="../assets/images/pdf.svg" alt="" width="50px">
                                         <div class="second-child">
                                             <div class="epreuve-title">{{epreuve.name}}</div>
@@ -158,10 +170,13 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="noEpreuve" [class.none]="noEpreuve(1, 'Rattrapage')">
+                                Aucune épreuve disponible
+                            </div>
                             <h4>Semestre 2</h4>
-                            <div class="grid-container">
-                                <div *ngFor="let epreuve of epreuves;" [class.none]="!showEpreuve(epreuve, 2, 'R')" ngModel>
-                                    <div class="epreuve-item" title="{{epreuve.name}}" *ngIf="showEpreuve(epreuve, 2, 'SN')" ngModel>
+                            <div class="grid-container" [class.none]="!noEpreuve(2, 'Rattrapage')">
+                                <div *ngFor="let epreuve of epreuves;" [class.none]="!showEpreuve(epreuve, 2, 'Rattrapage')" ngModel>
+                                    <div class="epreuve-item" title="{{epreuve.name}}" *ngIf="showEpreuve(epreuve, 2, 'Rattrapage')" ngModel>
                                         <img class="epreuve-icone" src="../assets/images/pdf.svg" alt="" width="50px">
                                         <div class="second-child">
                                             <div class="epreuve-title">{{epreuve.name}}</div>
@@ -174,11 +189,14 @@
                                         </a>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="noEpreuve" [class.none]="noEpreuve(2, 'Rattrapage')">
+                                Aucune épreuve disponible
                             </div>
                         </div>
                     </mat-tab>
                     <mat-tab label="Fiche de TD">
-                        <div class="first-child">
+                        <div class="first-child" [class.none]="!noEpreuve(3, 'TD')">
                             <div class="grid-container">
                                 <div *ngFor="let epreuve of epreuves;" [class.none]="!showEpreuve(epreuve, 3, 'TD')" ngModel>
                                     <div class="epreuve-item" title="{{epreuve.name}}" *ngIf="showEpreuve(epreuve, 2, 'cc')" ngModel>
@@ -196,11 +214,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="noEpreuve" [class.none]="noEpreuve(3, 'TD')">
+                            Aucune épreuve disponible
+                        </div>
                     </mat-tab>
-                    <mat-tab label="Examen">
-                        <div class="grid-container">
-                            <div *ngFor="let epreuve of epreuves;" [class.none]="!showEpreuve(epreuve, 4, 'Exam')" ngModel>
-                                <div class="epreuve-item" title="{{epreuve.name}}" *ngIf="showEpreuve(epreuve, 4, 'Exam')" ngModel>
+                    <mat-tab label="BTS Blanc">
+                        <div class="grid-container" [class.none]="!noEpreuve(4, 'examen_blanc')">
+                            <div *ngFor="let epreuve of epreuves;" [class.none]="!showEpreuve(epreuve, 5, 'examen_blanc')" ngModel>
+                                <div class="epreuve-item" title="{{epreuve.name}}" *ngIf="showEpreuve(epreuve, 5, 'examen_blanc')" ngModel>
                                     <img class="epreuve-icone" src="../assets/images/pdf.svg" alt="" width="50px">
                                     <div class="second-child">
                                         <div class="epreuve-title">{{epreuve.name}}</div>
@@ -214,6 +235,30 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="noEpreuve" [class.none]="noEpreuve(4, 'examen_blanc')">
+                            Aucune épreuve disponible
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Examen">
+                        <div class="grid-container" [class.none]="!noEpreuve(5, 'examen')">
+                            <div *ngFor="let epreuve of epreuves;" [class.none]="!showEpreuve(epreuve, 5, 'examen')" ngModel>
+                                <div class="epreuve-item" title="{{epreuve.name}}" *ngIf="showEpreuve(epreuve, 5, 'examen')" ngModel>
+                                    <img class="epreuve-icone" src="../assets/images/pdf.svg" alt="" width="50px">
+                                    <div class="second-child">
+                                        <div class="epreuve-title">{{epreuve.name}}</div>
+                                        <div class="epreuve-name-school">
+                                            {{epreuve.school}}
+                                        </div>
+                                    </div>
+                                    <a class="download" href="../assets/epreuves/{{epreuve.nomPysique}}.pdf" download>
+                                        <img src="../assets/images/direct-download.svg" alt="" width="20px">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="noEpreuve" [class.none]="noEpreuve(5, 'examen')">
+                            Aucune épreuve disponible
+                        </div>
                     </mat-tab>
                 </mat-tab-group>
 
@@ -222,7 +267,7 @@
         </div>
     </div>
     <div class="footer">
-        Junior TACHOM &copy; 2021 - (+237) 696 942 146
+        Junior TACHOM &copy; 2021 - (+237) 696 942 146 <br>constantjunior30@gmail.com
     </div>
 </div>
 <!-- <script src="../assets/js/custom.js"></script> -->
